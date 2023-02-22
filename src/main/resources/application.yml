@@ -1,0 +1,43 @@
+
+spring:
+  profiles:
+    active: dev
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8 #日期序列化走北京时间
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+  datasource:
+    url: jdbc:mysql://101.43.116.161:3306/research_mybatis
+    username: root
+    password: liuzhao
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.lau.wechat: DEBUG
+    me.chanjar.weixin: DEBUG
+wx:
+  mp:
+    configs:
+      - appId: wx1ba5f67bc16408e3
+        secret: 7d29c2ea97383872b6556617fcc2aafa
+#        token: 111 （接口配置里的Token值）
+#        aesKey: 111 （接口配置里的EncodingAESKey值）
+#      - appId: 2222 （另一个公众号的appid，以下同上）
+#        secret: 1111
+#        token: 111
+#        aesKey: 111
+server:
+  port: 8181
+  tomcat:
+    uri-encoding: UTF-8
+    servlet:
+      context-path: /jcwx
